@@ -1,2 +1,2 @@
-# agent-platform-comparison
-A comparison of three competitors in the AI agent space: SmythOS, Langroid, and LangChain
+# AI Agent Platform Comparison
+A comparison of three competitors in the AI agent space: SmythOS, Langroid, and LangChain.
