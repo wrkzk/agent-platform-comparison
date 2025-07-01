@@ -5,7 +5,7 @@ from langroid.agent.special import DocChatAgent, DocChatAgentConfig
 
 # Define what document to use
 documents =[
-    "files/PlanCoverageInformation.pdf"
+    "../files/python_book.pdf"
 ]
 
 # Agent configuration

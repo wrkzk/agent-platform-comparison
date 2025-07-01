@@ -43,7 +43,7 @@ async function createAgent() {
 async function indexDataForAgent(agent: Agent) {
     const filename = fileURLToPath(import.meta.url);
     const dirname = path.dirname(filename);
-    const filePath = path.join(dirname, '../files/PlanCoverageInformation.pdf');
+    const filePath = path.join(dirname, '../files/python_book.pdf');
 
     const vectordb = agent.vectorDB.RAMVec('ramvec');
     await vectordb.purge();
