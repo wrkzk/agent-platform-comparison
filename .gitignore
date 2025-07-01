@@ -1,5 +1,6 @@
 # Other directories
 .qdrant
+.qdrantdb
 .vscode
 rollup-colorfulLogs.js
 
