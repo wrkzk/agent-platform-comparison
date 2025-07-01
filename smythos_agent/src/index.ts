@@ -43,15 +43,15 @@ async function createAgent() {
 async function indexDataForAgent(agent: Agent) {
     const filename = fileURLToPath(import.meta.url);
     const dirname = path.dirname(filename);
-    const filePath = path.join(dirname, '../files/python_book.pdf');
+    const filePath = path.join(dirname, '../../files/python_book.pdf');
 
     const vectordb = agent.vectorDB.RAMVec('ramvec');
     await vectordb.purge();
 
     const parsedDoc = await Doc.pdf.parse(filePath, {
-        title: 'Plan Coverage Information',
-        author: 'Blue Cross and Blue Shield of Texas',
-        date: '2025-06-10'
+        title: 'Python Programming',
+        author: 'Hans-Petter Halvorsen',
+        date: '2019'
     })
 
     await vectordb.insertDoc(parsedDoc.title, parsedDoc, {myEntry: 'My Metadata'})
