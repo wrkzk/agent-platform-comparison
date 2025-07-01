@@ -11,7 +11,7 @@ const rl = readline.createInterface({
     output
 });
 
-// Create a new agent with a skill that allows it to retrieve information from the vectordb.
+// Create a new agent with a skill that allows it to retrieve information from the vectordb
 async function createAgent() {
     const agent = new Agent({
         id: 'pdf-agent',
@@ -40,6 +40,7 @@ async function createAgent() {
     return agent;
 }
 
+// Parse the given pdf document, and embed its chunks in the local vectordb
 async function indexDataForAgent(agent: Agent) {
     const filename = fileURLToPath(import.meta.url);
     const dirname = path.dirname(filename);
@@ -57,6 +58,7 @@ async function indexDataForAgent(agent: Agent) {
     await vectordb.insertDoc(parsedDoc.title, parsedDoc, {myEntry: 'My Metadata'})
 }
 
+// Create the agent, and run a loop where the user asks a query about the document
 async function main() {
     const agent = await createAgent();
     await indexDataForAgent(agent);
