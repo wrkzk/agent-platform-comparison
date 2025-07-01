@@ -2,6 +2,7 @@
 .qdrant
 .qdrantdb
 .vscode
+.smyth
 rollup-colorfulLogs.js
 
 # Byte-compiled / optimized / DLL files
