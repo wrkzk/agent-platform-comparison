@@ -22,7 +22,7 @@ In this repo, I compare three different agent builder libraries to assess their 
 | Local LLM Support    | [Yes](https://python.langchain.com/docs/how_to/local_llms/) - Ollama, Llama.cpp, GPT4All, llamafile | [Yes](https://langroid.github.io/langroid/tutorials/local-llm-setup/) - Ollama, LMStudio, llama.cpp, vLLM | Planned |
 | Supported LLM Providers | [Numerous](https://python.langchain.com/docs/integrations/llms/) | Primarily via OpenAI API, although can use `litellm` to interface with many others | Via OpenAI API |
 | Supported Vector DBs | [Numerous](https://python.langchain.com/docs/integrations/vectorstores/) | Qdrant, Chroma, LanceDB | Milvus, Pinecone, in-RAM |
-| Documentation | Comprehensive | Small but complete | Somewhat lacking |
+| Documentation | Comprehensive, see [here](https://python.langchain.com/docs/introduction/) | Minimal but complete, see [here](https://langroid.github.io/langroid/quick-start/) | Somewhat lacking |
 | Ease of Setup | More involved | Very simple | Relatively simple
 
 ## Conclusion
