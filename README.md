@@ -15,3 +15,6 @@ In this repo, I compare three different agent builder libraries to assess their 
 | Supported Vector DBs | [Numerous](https://python.langchain.com/docs/integrations/vectorstores/) | Qdrant, Chroma, LanceDB | Milvus, Pinecone, in-RAM |
 | Documentation | Comprehensive | Small but complete | Somewhat lacking |
 | Ease of Setup | More involved | Very simple | Relatively simple
+
+## Conclusion
+LangChain overwhelmingly has the most complete documentation, and seems to be the most feature rich platform to develop AI agents on among these three libraries. It supports the most LLMs, both local and through a remote provider, and it supports a multitude of vector database providers. Additionally, it takes a slightly less abstracted approach. In the examples in this repository, this meant manually configuring the retrieval and generations steps of the RAG pipline. However, both Langroid and SmythOS take a much more streamlined, organized, and higher-level approach, making development simpler. They come with preconfigured chat agents, which reduces the need to manually configure the details of an agent. A downside of this is that the support fewer features and are less configurable. If running a llm locally is a requirement, through somthing like Ollama, then either Langroid or LangChain are currently the better two options, as SmythOS currently does not support this.
