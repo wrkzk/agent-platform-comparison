@@ -4,6 +4,8 @@
 .vscode
 .smyth
 rollup-colorfulLogs.js
+data/
+insurance.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
