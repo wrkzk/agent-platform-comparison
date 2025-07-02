@@ -1,3 +1,12 @@
+
+<p float="left">
+  <img src="https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/logo-light.svg" width="300">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/langroid/langroid/main/docs/assets/langroid-card-lambda-ossem-rust-1200-630.png" width="150">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/SmythOS/smyth-docs/refs/heads/main/static/img/smythos-500px.png" width="75">
+</p>
+
 # AI Agent Platform Comparison
 In this repo, I compare three different agent builder libraries to assess their relative advantages and disadvantages. The three libraries that I decided to compare are LangChain, Langroid, and the SmythOS SDK. To carry out this comparison, I completed the same task in all three platforms: building a very simple agent that uses RAG to respond to user queries based on a given document.
 
