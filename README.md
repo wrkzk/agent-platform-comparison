@@ -25,5 +25,21 @@ In this repo, I compare three different agent builder libraries to assess their 
 | Documentation | Comprehensive, see [here](https://python.langchain.com/docs/introduction/) | Minimal but complete, see [here](https://langroid.github.io/langroid/quick-start/) | Somewhat lacking |
 | Ease of Setup | More involved | Very simple | Relatively simple
 
+## Dependencies and Hardware Requirements
+To run `langchain_agent`, ensure that the following dependencies are installed via `pip`, or your operating system package manager:
+- `llama-cloud-services`
+- `langchain-text-splitters`
+- `langchain-community`
+- `langgraph`
+- `langchain[openai]`
+- `langchain-openai`
+- `langchain-core`
+
+To run `langroid_agent`, ensure that `langroid[doc-chat,db]` is installed via `pip` or another package manager.
+
+Finally, to run `smythos_agent`, install the SDK with `npm i -g @smythos/sdk`.
+
+In terms of hardware requirements, these agent platforms can run on a wide variety of hardware, assuming that they are relying on API calls to interface with the LLMs and embeddings models. Running local language and embedding models require significantly more powerful hardware. For example, to run larger language open source models such as `qwen3-30b` or `gemma-27b`, which would provide the highest accuracy, you would need a dedicated GPU with 24+ GB of VRAM. Powerful open source embedding models such as `qwen3-embedding-8B` require less system resources, although a powerful GPU is still necessary to vectorize text quickly.
+
 ## Conclusion
 LangChain overwhelmingly has the most complete documentation, and seems to be the most feature rich platform to develop AI agents on among these three libraries. It supports the most LLMs, both local and through a remote provider, and it supports a multitude of vector database providers. Additionally, it takes a slightly less abstracted approach. In the examples in this repository, this meant manually configuring the retrieval and generations steps of the RAG pipline. However, both Langroid and SmythOS take a much more streamlined, organized, and higher-level approach, making development simpler. They come with preconfigured chat agents, which reduces the need to manually configure the details of an agent. A downside of this is that the support fewer features and are less configurable. If running a llm locally is a requirement, through somthing like Ollama, then either Langroid or LangChain are currently the better two options, as SmythOS currently does not support this.
