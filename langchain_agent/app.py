@@ -18,12 +18,15 @@ from langgraph.graph import START, StateGraph
 
 load_dotenv()
 
+# Initialize vector store
 embeddings = OpenAIEmbeddings(model = 'text-embedding-3-large')
 vector_store = InMemoryVectorStore(embeddings)
 
+# Initialize the llm and the RAG prompt
 llm = init_chat_model('gpt-4o', model_provider = 'openai')
 prompt = hub.pull('rlm/rag-prompt')
 
+# Parse the given documents to markdown and save them to data/
 def parse_documents(docs):
     parser = LlamaParse(
         api_key = "llx-J6g57bwTZau91dkpAKDUCpBh1tfthFw4XDbSnxmUal0MuBhc",
@@ -43,7 +46,7 @@ def parse_documents(docs):
         with open(f'data/{name}.md', 'w', encoding = 'utf-8') as md_result:
             md_result.write(markdown_documents[0].text)
 
-
+# Split the text into overlapping chunks to be vectorized
 def split_text():
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size = 1000,
@@ -57,24 +60,23 @@ def split_text():
     chunks = text_splitter.split_documents(documents)
     return chunks
 
-
+# Maintains the state
 class State(TypedDict):
     question: str
     context: List[Document]
     answer: str
 
-
+# Retrieve relevant document chunks from the vectordb through similarity search
 def retrieve(state: State):
     retrieved_docs = vector_store.similarity_search(state['question'])
     return {'context': retrieved_docs}
 
-
+# Feed the question and context to the llm and generate a response
 def generate(state: State):
     docs_content = "\n\n".join(doc.page_content for doc in state['context'])
     messages = prompt.invoke({'question': state['question'], 'context': docs_content})
     response = llm.invoke(messages)
     return {'answer': response.content}
-
 
 def main():
     documents = [ '../files/partial_orders.pdf' ]
